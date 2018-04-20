@@ -2,6 +2,8 @@ var R = require('/lib/render-js/class.js');
 var P = require('/lib/xp/portal');
 var S = require('/lib/store/store');
 
+var ITEM_HEIGHT = 225;
+
 var UL = R.ul({
   dataPortalComponentType: 'part',
   _s: {
@@ -25,13 +27,18 @@ R.build(UL);
 
 var LI = R.li({
   _s: {
-    height: '225px'
+    height: ITEM_HEIGHT
   }
 }, R.article([
     R.img(),
-    R.h3(),
-    R.p(),
-    R.time()
+    R.div({
+      display: 'inline-block',
+      width: '49%'
+    },[
+      R.h3(),
+      R.p()//,
+      //R.time()
+    ])
   ])
 );
 R.build(LI);
@@ -60,13 +67,15 @@ exports.get = function(request) {
       }
     });
     R.access(anItem, 'article.img').setAttributes({
-      height: 200,
-      src: item.image,
-      width: 200
+      height: ITEM_HEIGHT,
+      src: item.image
+    }).setStyle({
+      display: 'inline-block',
+      width: '49%'
     });
-    R.access(anItem, 'article.h3').setContent(item.title);
-    R.access(anItem, 'article.p').setContent(item.description);
-    R.access(anItem, 'article.time').setContent(item.timestamp);
+    R.access(anItem, 'article.div.h3').setContent(item.title);
+    R.access(anItem, 'article.div.p').setContent(item.description);
+    //R.access(anItem, 'article.div.time').setContent(item.timestamp);
     return anItem;
   })); // dom
   var r = R.render(dom);
