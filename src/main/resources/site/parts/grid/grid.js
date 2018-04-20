@@ -38,13 +38,22 @@ var LI = R.li({
     R.div({
       _s: {
         display: 'inline-block',
+        overflow: 'hidden',
         paddingLeft: 10,
         verticalAlign: 'top',
         width: '49%'
       }
     },[
-      R.h3(),
-      R.p()//,
+      R.h3({
+        _s: {
+          overflow: 'hidden'
+        }
+      }),
+      R.p({
+        _s: {
+          overflow: 'hidden'
+        }
+      })//,
       //R.time()
     ])
   ])
