@@ -12,7 +12,16 @@
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-<header data-th-replace="/views/fragments/sidebar/sidebar :: sidebar"></header>
+<header id="sidebar">
+    <h1 data-th-text="${heading}"></h1>
+    <nav class="filterlinks">
+        <a data-th-each="filterlink : ${filterlinks}" data-th-remove="tag" >
+            <a class="filterlink" data-th-href="${filterlink.src}|">
+                <p data-th-text="${filterlink.text}"></p>
+            </a>
+        </a>
+    </nav>
+</header>
 
 <main class="content-wrapper">
     <div data-portal-region="main">

@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync": "browser-sync start --proxy 'localhost:8080' --files 'src'"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,5 @@
     "url": "https://github.com/runarmyklebust/enonic-news/issues"
   },
   "homepage": "https://github.com/runarmyklebust/enonic-news#readme",
-  "private": true,
-  "scripts": {
-    "sync": "browser-sync start --proxy 'localhost:8080' --files 'src'"
-  }
+  "private": true
 }

@@ -1,0 +1,34 @@
+html, body {
+    padding: 0;
+    margin: 0;
+
+}
+
+#sidebar {
+    background-color: black;
+    color: white;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+#sidebar a.filterlink {
+    display: block;
+    height: 50px;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    text-decoration: none;
+}
+
+#sidebar a.filterlink:hover {
+    background-color: #0FA0CE;
+}
+
+#sidebar h1 {
+    padding: 30px 0;
+    margin: 0;
+    text-align: center;
+    font-size: 12pt;
+}

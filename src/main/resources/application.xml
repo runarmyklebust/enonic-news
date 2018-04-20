@@ -1,3 +1,9 @@
 <application>
   <description>Enånnik njus</description>
+    <config>
+        <input name="filterlink" type="TextLine">
+            <label>Sidebar filter link</label>
+            <occurrences minimum="1" maximum="99"/>
+        </input>
+    </config>
 </application>
