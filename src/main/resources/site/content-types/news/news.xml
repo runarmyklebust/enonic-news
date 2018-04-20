@@ -3,7 +3,7 @@
   <display-name>News</display-name>
   <super-type>base:structured</super-type>
   <form>
-    <input type="Date" name="date">
+    <input type="Date" name="datetime">
       <label>Date</label>
       <occurrences minimum="0" maximum="1"/>
       <default>now</default>
