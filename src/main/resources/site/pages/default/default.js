@@ -31,9 +31,13 @@ function handleGet(req) {
                     params: params,
                 }),
                 text: f.label[0].toUpperCase() + f.label.substring(1).toLowerCase(),
+                faIcon: f.faicon,
             });
         }
+
     }
+
+    log.info(JSON.stringify({filterlinks:filterlinks}, null, 2));
 
     var sidebarStyleUri = portalLib.assetUrl({path: "css/sidebar.css"})
 

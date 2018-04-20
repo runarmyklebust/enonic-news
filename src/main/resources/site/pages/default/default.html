@@ -7,7 +7,7 @@
     <title>Backup Monitor</title>
     <link rel="shortcut icon" href="{{assetsUri}}/img/favicon.svg">
     <link rel="shortcut icon" href="{{assetsUri}}/img/favicon.png">
-    <link href="{{assetsUri}}/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="{{assetsUri}}/css/main.css" rel="stylesheet">
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -17,7 +17,9 @@
     <nav class="filterlinks">
         <a data-th-each="filterlink : ${filterlinks}" data-th-remove="tag" >
             <a class="filterlink" data-th-href="${filterlink.src}|">
+                <i data-th-class="|fas fa-${filterlink.faIcon}|"></i>
                 <p data-th-text="${filterlink.text}"></p>
+
             </a>
         </a>
     </nav>
