@@ -1,6 +1,9 @@
-var contentSource = require("/lib/content-store/content-store");
+var contentSource = require("/lib/content-source/content-source");
+var photoSource = require("/lib/photo-source/photo-source");
+var discussSource = require("/lib/discuss-source/discuss-source");
 
-var sources = ["news", "discuss", "photos", "training"];
+//var sources = ["news", "discuss", "photos", "training"];
+var sources = ["photos", "news", "discuss"];
 
 exports.fetchItems = function (params) {
 
@@ -18,17 +21,13 @@ exports.fetchItems = function (params) {
 var doFetchItem = function () {
     switch (getSource()) {
     case "news":
-        return contentSource.fetchNews({count: 1});
+        return contentSource.fetchItem();
         break;
     case "discuss":
-        return {
-            type: "discuss"
-        };
+        return discussSource.fetchItem();
         break;
     case "photos":
-        return {
-            type: "photos"
-        };
+        return photoSource.fetchItem();
         break;
     case "training":
         return {
@@ -36,7 +35,7 @@ var doFetchItem = function () {
         };
         break;
     default:
-        return contentSource.fetchNews({count: 1});
+        return contentSource.fetchItem({count: 1});
     }
 
 };
