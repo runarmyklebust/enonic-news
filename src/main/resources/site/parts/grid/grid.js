@@ -60,7 +60,10 @@ exports.get = function(request) {
       }
     });
     if(item.image) {
-      R.access(anItem, 'article').addContent(R.img({src: item.image}));
+      R.access(anItem, 'article').addContent(R.img({
+        height: ITEM_HEIGHT,
+        src: item.image
+      }));
     } else {
       R.access(anItem, 'article').addContent([
         R.h3({
