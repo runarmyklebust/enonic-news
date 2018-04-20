@@ -13,6 +13,8 @@ var UL = R.ul({
   },
   _m: {
     'minWidth375': {
+      gridColumnGap: '30px',
+      gridRowGap: '30px',
       gridTemplateColumns: '1fr 1fr'
     },
     'minWidth768': {
@@ -34,6 +36,7 @@ var LI = R.li({
     R.div({
       _s: {
         display: 'inline-block',
+        paddingLeft: 10,
         verticalAlign: 'top',
         width: '49%'
       }
@@ -69,13 +72,17 @@ exports.get = function(request) {
         gridColumnStart: 'span ' + Math.floor((Math.random() * 2) + 1)
       }
     });
-    R.access(anItem, 'article.img').setAttributes({
-      height: ITEM_HEIGHT,
-      src: item.image
-    }).setStyle({
-      display: 'inline-block',
-      width: '49%'
-    });
+    if(item.image) {
+      R.access(anItem, 'article.img').setAttributes({
+        height: ITEM_HEIGHT,
+        src: item.image
+      }).setStyle({
+        display: 'inline-block',
+        width: '49%'
+      });
+    } else {
+
+    }
     R.access(anItem, 'article.div.h3').setContent(item.title);
     R.access(anItem, 'article.div.p').setContent(item.description);
     //R.access(anItem, 'article.div.time').setContent(item.timestamp);
