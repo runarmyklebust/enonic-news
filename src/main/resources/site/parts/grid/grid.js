@@ -3,29 +3,10 @@ var P = require('/lib/xp/portal');
 
 var LORUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 var DATA = [{
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
-}, {
-  displayName: LORUM
+  image: '2f9c5ab0-e382-4a7f-9f1b-340dc50144e1',
+  title: 'Title',
+  description: LORUM,
+  timestamp: '2018-04-20T10:22:08.641Z'
 }];
 
 var LI = R.li({
@@ -33,8 +14,10 @@ var LI = R.li({
     height: '225px'
   }
 }, R.article([
-    //R.h3(),
-    R.p()
+    R.img(),
+    R.h3(),
+    R.p(),
+    R.time()
   ])
 );
 R.build(LI);
@@ -89,7 +72,15 @@ exports.get = function(request) {
           gridColumnStart: 'span ' + Math.floor((Math.random() * 2) + 1)
         }
       });
-      R.access(anItem, 'article.p').setContent(item.displayName);
+      log.info(item.image);
+      R.access(anItem, 'article.img').setAttributes({
+        height: 100,
+        src: P.imageUrl({id: item.image, scale: 'block(100x100)'}),
+        width: 100
+      });
+      R.access(anItem, 'article.h3').setContent(item.title);
+      R.access(anItem, 'article.p').setContent(item.description);
+      R.access(anItem, 'article.time').setContent(item.timestamp);
       return anItem;
     }) // DATA map
   ); // dom
