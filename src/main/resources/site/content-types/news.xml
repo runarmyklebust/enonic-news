@@ -3,10 +3,6 @@
   <display-name>News</display-name>
   <super-type>base:structured</super-type>
   <form>
-    <input type="TextLine" name="title">
-      <label>Tile</label>
-      <occurrences minimum="1" maximum="1"/>
-    </input>
     <input type="Date" name="date">
       <label>Date</label>
       <occurrences minimum="0" maximum="1"/>
