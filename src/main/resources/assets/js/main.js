@@ -4,13 +4,14 @@
 
     $(function () {
 
+        fetchData(4);
+
         window.setInterval(function () {
             fetchData();
         }, 5000);
-
     });
 
-    var fetchData = function () {
+    var fetchData = function (count, filters) {
 
         console.log("SvcUrl: %s", svcUrl);
 
@@ -18,7 +19,7 @@
             url: svcUrl + 'data-fetcher',
             method: 'GET',
             data: {
-                id: "fisk"
+                count: count
             }
         }).then(function (data) {
             console.log(data);
