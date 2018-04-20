@@ -12,11 +12,15 @@
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-<nav id="mainNav"></nav>
+<header data-th-replace="/views/fragments/sidebar/sidebar :: sidebar"></header>
 
-<div class="content-wrapper">
-    <h1>Fisk</h1>
-</div>
+<main class="content-wrapper">
+    <div data-portal-region="main">
+        <div data-th-if="${mainRegion}" data-th-each="component : ${mainRegion.components}" data-th-remove="tag" >
+            <div data-portal-component="${component.path}" data-th-remove="tag"></div>
+        </div>
+    </div>
+</main>
 
 <footer class="sticky-footer"></footer>
 
