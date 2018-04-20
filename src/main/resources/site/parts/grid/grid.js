@@ -32,8 +32,11 @@ var LI = R.li({
 }, R.article([
     R.img(),
     R.div({
-      display: 'inline-block',
-      width: '49%'
+      _s: {
+        display: 'inline-block',
+        verticalAlign: 'top',
+        width: '49%'
+      }
     },[
       R.h3(),
       R.p()//,
@@ -45,10 +48,10 @@ R.build(LI);
 
 
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
+  var letters = 'CDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+    color += letters[Math.floor(Math.random() * letters.length)];
   }
   return color;
 }
