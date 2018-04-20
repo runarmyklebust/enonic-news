@@ -1,0 +1,27 @@
+{
+  "name": "enonic-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.23.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runarmyklebust/enonic-news.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runarmyklebust/enonic-news/issues"
+  },
+  "homepage": "https://github.com/runarmyklebust/enonic-news#readme",
+  "private": true,
+  "scripts": {
+    "sync": "browser-sync start --proxy 'localhost:8080' --files 'src'"
+  }
+}

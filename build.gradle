@@ -24,6 +24,8 @@ dependencies {
     //include "com.enonic.xp:lib-mail:${xpVersion}"
     //include "com.enonic.xp:lib-repo:${xpVersion}"
     //include "com.enonic.xp:lib-websocket:${xpVersion}"
+
+    include 'com.enonic.lib:render-js:1.23.0-B1'
 }
 
 repositories {
