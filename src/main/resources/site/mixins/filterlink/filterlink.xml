@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mixin>
+    <display-name>Filterlink</display-name>
+    <items>
+        <item-set name="filterlink" >
+            <label>FilterLink</label>
+            <items>
+                <input name="label" type="TextLine">
+                    <label>Label</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input name="href" type="TextLine">
+                    <label>Target</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+                <input name="faicon" type="TextLine">
+                    <label>Fa-icon</label>
+                    <occurrences minimum="1" maximum="1"/>
+                </input>
+            </items>
+            <occurrences minimum="1" maximum="99"/>
+        </item-set>
+    </items>
+</mixin>
