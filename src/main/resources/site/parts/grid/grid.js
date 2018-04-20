@@ -29,6 +29,7 @@ R.build(UL);
 
 var LI = R.li({
   _s: {
+    border: '1px solid black',
     height: ITEM_HEIGHT
   }
 }, R.article([
