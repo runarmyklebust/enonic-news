@@ -7,14 +7,16 @@ var ITEM_HEIGHT = 225;
 var UL = R.ul({
   dataPortalComponentType: 'part',
   _s: {
+    backgroundColor: '#333',
     listStyle: 'none',
-    padding: '0',
+    margin: '0',
+    padding: '2px',
     display: 'grid',
   },
   _m: {
     'minWidth375': {
-      gridColumnGap: '30px',
-      gridRowGap: '30px',
+      gridColumnGap: '2px',
+      gridRowGap: '2px',
       gridTemplateColumns: '1fr 1fr'
     },
     'minWidth768': {
@@ -29,7 +31,6 @@ R.build(UL);
 
 var LI = R.li({
   _s: {
-    border: '1px solid black',
     height: ITEM_HEIGHT
   }
 }, R.article([
