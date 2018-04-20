@@ -33,31 +33,7 @@ var LI = R.li({
   _s: {
     height: ITEM_HEIGHT
   }
-}, R.article([
-    R.img(),
-    R.div({
-      _s: {
-        display: 'inline-block',
-        overflow: 'hidden',
-        paddingLeft: 10,
-        verticalAlign: 'top'//,
-        //width: '49%'
-      }
-    },[
-      R.h3({
-        _s: {
-          overflow: 'hidden'
-        }
-      }),
-      R.p({
-        _s: {
-          overflow: 'hidden'
-        }
-      })//,
-      //R.time()
-    ])
-  ])
-);
+}, R.article());
 R.build(LI);
 
 
@@ -84,18 +60,21 @@ exports.get = function(request) {
       }
     });
     if(item.image) {
-      R.access(anItem, 'article.img').setAttributes({
-        height: ITEM_HEIGHT,
-        src: item.image
-      }).setStyle({
-        display: 'inline-block'//,
-        //width: '49%'
-      });
+      R.access(anItem, 'article').addContent(R.img({src: item.image}));
     } else {
-      R.access(anItem, 'article.div.h3').setContent(item.title);
-      R.access(anItem, 'article.div.p').setContent(item.description);
+      R.access(anItem, 'article').addContent([
+        R.h3({
+          _s: {
+            margin: 5
+          }
+        }, item.title),
+        R.p({
+          _s: {
+            margin: 5
+          }
+        }, item.description)
+      ]);
     }
-    //R.access(anItem, 'article.div.time').setContent(item.timestamp);
     return anItem;
   })); // dom
   var r = R.render(dom);
