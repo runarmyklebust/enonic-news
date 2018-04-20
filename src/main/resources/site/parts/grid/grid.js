@@ -7,14 +7,16 @@ var ITEM_HEIGHT = 225;
 var UL = R.ul({
   dataPortalComponentType: 'part',
   _s: {
+    backgroundColor: '#333',
     listStyle: 'none',
-    padding: '0',
+    margin: '0',
+    padding: '2px',
     display: 'grid',
   },
   _m: {
     'minWidth375': {
-      gridColumnGap: '30px',
-      gridRowGap: '30px',
+      gridColumnGap: '2px',
+      gridRowGap: '2px',
       gridTemplateColumns: '1fr 1fr'
     },
     'minWidth768': {
@@ -29,7 +31,6 @@ R.build(UL);
 
 var LI = R.li({
   _s: {
-    border: '1px solid black',
     height: ITEM_HEIGHT
   }
 }, R.article([
@@ -37,13 +38,22 @@ var LI = R.li({
     R.div({
       _s: {
         display: 'inline-block',
+        overflow: 'hidden',
         paddingLeft: 10,
-        verticalAlign: 'top',
-        width: '49%'
+        verticalAlign: 'top'//,
+        //width: '49%'
       }
     },[
-      R.h3(),
-      R.p()//,
+      R.h3({
+        _s: {
+          overflow: 'hidden'
+        }
+      }),
+      R.p({
+        _s: {
+          overflow: 'hidden'
+        }
+      })//,
       //R.time()
     ])
   ])
@@ -78,14 +88,13 @@ exports.get = function(request) {
         height: ITEM_HEIGHT,
         src: item.image
       }).setStyle({
-        display: 'inline-block',
-        width: '49%'
+        display: 'inline-block'//,
+        //width: '49%'
       });
     } else {
-
+      R.access(anItem, 'article.div.h3').setContent(item.title);
+      R.access(anItem, 'article.div.p').setContent(item.description);
     }
-    R.access(anItem, 'article.div.h3').setContent(item.title);
-    R.access(anItem, 'article.div.p').setContent(item.description);
     //R.access(anItem, 'article.div.time').setContent(item.timestamp);
     return anItem;
   })); // dom

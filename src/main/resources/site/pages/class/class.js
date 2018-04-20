@@ -25,7 +25,11 @@ var VIEW = [
   doctype(),
   html([
     head(title()),
-    body(main())
+    body({
+      _s: {
+        margin: '0'
+      }
+    },main())
   ])
 ]; //log.info('VIEW:' + JSON.stringify(VIEW, null, 4));
 

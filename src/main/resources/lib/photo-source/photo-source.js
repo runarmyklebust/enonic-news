@@ -32,7 +32,7 @@ var toItem = function (content) {
     return {
         type: "photo",
         image: imageUrl,
-        title: content.displayName,
+        title: "",
         description: "",
         timestamp: content.modifiedTime
     };
