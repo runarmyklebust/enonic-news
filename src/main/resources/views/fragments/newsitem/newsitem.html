@@ -1,0 +1,6 @@
+<li data-th-id="|newsitem-${newsitem.id}|" class="newsitem" data-th-fragment="newsitem">
+    <img data-th-src="${newsitem.photo}" class="image" />
+    <h3 data-th-text="${newsitem.title}" />
+    <p class="text" data-th-if="${newsitem.text}" data-th-text="${newsitem.text}" />
+    <p class="text" data-th-if="${newsitem.date}" data-th-text="${newsitem.date}" />
+</li>

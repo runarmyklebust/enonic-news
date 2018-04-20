@@ -1,0 +1,7 @@
+<main class="newsitem-grid xp-part">
+    <ul>
+        <div data-th-remove="tag" data-th-each="newsitem : ${newsitems}">
+            <li data-th-replace="/views/fragments/newsitem/newsitem :: newsitem"></li>
+        </div>
+    </ul>
+</main>
